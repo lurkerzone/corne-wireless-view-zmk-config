@@ -10,9 +10,9 @@
 
 / {
     behaviors {
-        period: period {
+        td_period: td_period {
             compatible = "zmk,behavior-tap-dance";
-            label = "PERIOD";
+            label = "TD_PERIOD";
             #binding-cells = <0>;
             tapping-term-ms = <180>;
             bindings = <&kp SPACE>, <&kp PERIOD>;
@@ -25,6 +25,13 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <190>;
+        };
+
+        CAPS_WORD: CAPS_WORD {
+            compatible = "zmk,behavior-caps-word";
+            label = "CAPS_WORD";
+            #binding-cells = <0>;
+            continue-list = <B J>;
         };
     };
 
@@ -69,10 +76,10 @@
 
             label = "Base";
             bindings = <
-&mt ESC TAB       &as Q  &as W  &as F                   &as P  &as B      &as J                      &as L  &as U              &as Y    &kp SEMI  &kp BSPC
-&kp LEFT_SHIFT    &as A  &as R  &as S                   &as T  &as G      &as M                      &as N  &as E              &as I    &as O     &kp SQT
-&kp LEFT_CONTROL  &as Z  &as X  &as C                   &as D  &as V      &as K                      &as H  &kp COMMA          &kp DOT  &kp FSLH  &kp RET
-                                &mt LEFT_GUI BACKSPACE  &mo 1  &period    &mt RIGHT_SHIFT BACKSPACE  &mo 2  &mt RIGHT_ALT DEL
+&mt ESC TAB       &as Q  &as W  &as F                   &as P  &as B         &as J                      &as L  &as U              &as Y    &kp SEMI  &kp BSPC
+&kp LEFT_SHIFT    &as A  &as R  &as S                   &as T  &as G         &as M                      &as N  &as E              &as I    &as O     &kp SQT
+&kp LEFT_CONTROL  &as Z  &as X  &as C                   &as D  &as V         &as K                      &as H  &kp COMMA          &kp DOT  &kp FSLH  &kp RET
+                                &mt LEFT_GUI BACKSPACE  &mo 1  &td_period    &mt RIGHT_SHIFT BACKSPACE  &mo 2  &mt RIGHT_ALT DEL
             >;
         };
 
