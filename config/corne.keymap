@@ -26,13 +26,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <190>;
         };
-
-        CAPS_WORD: CAPS_WORD {
-            compatible = "zmk,behavior-caps-word";
-            label = "CAPS_WORD";
-            #binding-cells = <0>;
-            continue-list = <B J>;
-        };
     };
 
     macros {
@@ -61,6 +54,15 @@
                 <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
 
             label = "AS";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <17 18>;
         };
     };
 
@@ -95,7 +97,7 @@
 &trans      &bt BT_NXT           &kp HOME       &kp UP            &kp END       &kp PG_UP        &trans  &kp N7  &kp N8    &kp N9  &trans  &kp BSPC
 &bt BT_CLR  &bt BT_PRV           &kp LEFT       &kp DOWN          &kp RIGHT     &kp PG_DN        &trans  &kp N4  &kp N5    &kp N6  &trans  &trans
 &trans      &kp LC(PRINTSCREEN)  &kp LG(LS(S))  &kp LS(LG(LEFT))  &kp LG(LEFT)  &kp LG(RIGHT)    &kp N0  &kp N1  &kp N2    &kp N3  &trans  &trans
-                                                &trans            &trans        &trans           &trans  &mo 3   &kp RALT
+                                                &trans            &trans        &trans           &trans  &trans  &kp RALT
             >;
         };
 
@@ -111,7 +113,7 @@
 &trans  &kp EXCLAMATION  &kp AT_SIGN     &kp POUND             &kp CARET              &none        &kp PLUS         &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp STAR  &kp BSPC
 &trans  &kp PERCENT      &kp AMPERSAND   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none        &kp KP_MINUS     &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp FSLH  &kp EQUAL
 &trans  &kp DOLLAR       &kp UNDERSCORE  &kp LBKT              &kp RBKT               &none        &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp DOT   &kp RET
-                                         &kp LGUI              &mo 3                  &kp SPACE    &kp RET          &trans           &kp RALT
+                                         &kp LGUI              &trans                 &kp SPACE    &kp RET          &trans           &kp RALT
             >;
         };
 
@@ -122,6 +124,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        layer_3 {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
