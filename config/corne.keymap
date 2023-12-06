@@ -24,7 +24,7 @@
             bindings = <&shift>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <190>;
+            tapping-term-ms = <200>;
         };
     };
 
@@ -78,9 +78,9 @@
 
             label = "Base";
             bindings = <
-&mt ESC TAB       &as Q  &as W  &as F                   &as P  &as B         &as J                      &as L  &as U              &as Y    &kp SEMI  &kp BSPC
-&kp LEFT_SHIFT    &as A  &as R  &as S                   &as T  &as G         &as M                      &as N  &as E              &as I    &as O     &kp SQT
-&kp LEFT_CONTROL  &as Z  &as X  &as C                   &as D  &as V         &as K                      &as H  &kp COMMA          &kp DOT  &kp FSLH  &kp RET
+&mt ESC TAB       &kp Q  &kp W  &kp F                   &kp P  &kp B         &kp J                      &kp L  &kp U              &kp Y    &kp SEMI  &kp BSPC
+&kp LEFT_SHIFT    &kp A  &kp R  &kp S                   &kp T  &kp G         &kp M                      &kp N  &kp E              &kp I    &kp O     &kp SQT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C                   &kp D  &kp V         &kp K                      &kp H  &kp COMMA          &kp DOT  &kp FSLH  &kp RET
                                 &mt LEFT_GUI BACKSPACE  &mo 1  &td_period    &mt RIGHT_SHIFT BACKSPACE  &mo 2  &mt RIGHT_ALT DEL
             >;
         };
@@ -94,10 +94,10 @@
 
             label = "Lower";
             bindings = <
-&trans      &bt BT_NXT           &kp HOME       &kp UP            &kp END       &kp PG_UP        &trans  &kp N7  &kp N8    &kp N9  &trans  &kp BSPC
-&bt BT_CLR  &bt BT_PRV           &kp LEFT       &kp DOWN          &kp RIGHT     &kp PG_DN        &trans  &kp N4  &kp N5    &kp N6  &trans  &trans
-&trans      &kp LC(PRINTSCREEN)  &kp LG(LS(S))  &kp LS(LG(LEFT))  &kp LG(LEFT)  &kp LG(RIGHT)    &kp N0  &kp N1  &kp N2    &kp N3  &trans  &trans
-                                                &trans            &trans        &trans           &trans  &trans  &kp RALT
+&trans      &bt BT_NXT           &kp HOME       &kp UP            &kp END       &kp PG_UP        &kp PLUS   &kp N7  &kp N8    &kp N9  &kp ASTERISK  &kp BSPC
+&bt BT_CLR  &bt BT_PRV           &kp LEFT       &kp DOWN          &kp RIGHT     &kp PG_DN        &kp MINUS  &kp N4  &kp N5    &kp N6  &kp SLASH     &trans
+&trans      &kp LC(PRINTSCREEN)  &kp LG(LS(S))  &kp LS(LG(LEFT))  &kp LG(LEFT)  &kp LG(RIGHT)    &kp N0     &kp N1  &kp N2    &kp N3  &kp DOT       &trans
+                                                &trans            &trans        &trans           &trans     &trans  &kp RALT
             >;
         };
 
