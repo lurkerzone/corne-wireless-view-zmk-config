@@ -14,7 +14,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_PERIOD";
             #binding-cells = <0>;
-            tapping-term-ms = <180>;
+            tapping-term-ms = <190>;
             bindings = <&kp SPACE>, <&kp PERIOD>;
         };
 
@@ -62,12 +62,17 @@
 
         caps_word {
             bindings = <&caps_word>;
-            key-positions = <17 18>;
+            key-positions = <16 19>;
         };
 
         numpad {
             bindings = <&tog 3>;
-            key-positions = <38 39>;
+            key-positions = <29 38>;
+        };
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <25 38>;
         };
     };
 
@@ -85,7 +90,7 @@
             bindings = <
 &mt ESC TAB       &kp Q  &kp W  &kp F                   &kp P  &kp B         &kp J                      &kp L  &kp U              &kp Y    &kp SEMI  &kp BSPC
 &kp LEFT_SHIFT    &kp A  &kp R  &kp S                   &kp T  &kp G         &kp M                      &kp N  &kp E              &kp I    &kp O     &kp SQT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C                   &kp D  &kp V         &kp K                      &kp H  &kp COMMA          &kp DOT  &kp FSLH  &kp RET
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C                   &kp D  &kp V         &kp K                      &kp H  &kp COMMA          &kp DOT  &kp FSLH  &kp KP_ENTER
                                 &mt LEFT_GUI BACKSPACE  &mo 1  &td_period    &mt RIGHT_SHIFT BACKSPACE  &mo 2  &mt RIGHT_ALT DEL
             >;
         };
@@ -124,10 +129,10 @@
 
         layer_3 {
             bindings = <
-&trans  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT     &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans  &trans  &to 0       &trans  &trans  &trans
+&trans  &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR    &kp F9  &kp F10  &kp F11  &kp F12  &trans  &trans
+&trans  &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH    &kp F5  &kp F6   &kp F7   &kp F8   &trans  &trans
+&trans  &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT     &kp F1  &kp F2   &kp F3   &kp F4   &trans  &trans
+                           &trans  &trans  &to 0       &trans  &trans   &trans
             >;
         };
     };
