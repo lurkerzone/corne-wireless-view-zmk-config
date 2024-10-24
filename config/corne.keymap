@@ -55,6 +55,62 @@
 
             label = "AS";
         };
+
+        degree: degree {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_2 &kp KP_NUMBER_4 &kp KP_NUMBER_8>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "DEGREE";
+        };
+
+        copyright: copyright {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_6 &kp KP_NUMBER_9>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "COPYRIGHT";
+        };
+
+        registered: registered {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_7 &kp KP_NUMBER_4>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "REGISTERED";
+        };
+
+        trademark: trademark {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp KP_NUMBER_0 &kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_3>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "TRADEMARK";
+        };
     };
 
     combos {
@@ -74,6 +130,21 @@
             bindings = <&kp ENTER>;
             key-positions = <25 38>;
         };
+
+        Escape {
+            bindings = <&kp ESC>;
+            key-positions = <0 1>;
+        };
+
+        L_parenthesis {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <15 16>;
+        };
+
+        R_parenthesis {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <16 17>;
+        };
     };
 
     keymap {
@@ -88,10 +159,10 @@
 
             label = "Base";
             bindings = <
-&mt ESC TAB       &kp Q  &kp W  &kp F                   &kp P  &kp B         &kp J                      &kp L  &kp U              &kp Y    &kp SEMI  &kp BSPC
-&kp LEFT_SHIFT    &kp A  &kp R  &kp S                   &kp T  &kp G         &kp M                      &kp N  &kp E              &kp I    &kp O     &kp SQT
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C                   &kp D  &kp V         &kp K                      &kp H  &kp COMMA          &kp DOT  &kp FSLH  &kp KP_ENTER
-                                &mt LEFT_GUI BACKSPACE  &mo 1  &td_period    &mt RIGHT_SHIFT BACKSPACE  &mo 2  &mt RIGHT_ALT DEL
+&kp TAB           &kp Q  &kp W  &kp F         &kp P            &kp B         &kp J                  &kp L            &kp U              &kp Y    &kp SEMI  &kp BSPC
+&kp LEFT_SHIFT    &kp A  &kp R  &kp S         &kp T            &kp G         &kp M                  &kp N            &kp E              &kp I    &kp O     &kp SQT
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C         &kp D            &kp V         &kp K                  &kp H            &kp COMMA          &kp DOT  &kp FSLH  &kp KP_ENTER
+                                &kp LEFT_GUI  &lt 1 BACKSPACE  &td_period    &mt RIGHT_SHIFT ENTER  &lt 2 BACKSPACE  &mt RIGHT_ALT DEL
             >;
         };
 
@@ -104,10 +175,10 @@
 
             label = "Lower";
             bindings = <
-&trans  &trans               &kp HOME       &kp UP            &kp END       &kp PG_UP        &kp PLUS   &kp N7  &kp N8    &kp N9  &kp ASTERISK  &kp BSPC
-&trans  &trans               &kp LEFT       &kp DOWN          &kp RIGHT     &kp PG_DN        &kp MINUS  &kp N4  &kp N5    &kp N6  &kp SLASH     &trans
-&trans  &kp LC(PRINTSCREEN)  &kp LG(LS(S))  &kp LS(LG(LEFT))  &kp LG(LEFT)  &kp LG(RIGHT)    &kp N0     &kp N1  &kp N2    &kp N3  &kp DOT       &trans
-                                            &trans            &trans        &trans           &trans     &trans  &kp RALT
+&trans  &trans               &kp HOME       &kp UP            &kp END       &kp PG_UP        &kp PLUS   &kp N7  &kp N8  &kp N9  &kp ASTERISK  &kp BSPC
+&trans  &trans               &kp LEFT       &kp DOWN          &kp RIGHT     &kp PG_DN        &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SLASH     &trans
+&trans  &kp LC(PRINTSCREEN)  &kp LG(LS(S))  &kp LS(LG(LEFT))  &kp LG(LEFT)  &kp LG(RIGHT)    &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT       &trans
+                                            &trans            &trans        &trans           &trans     &trans  &trans
             >;
         };
 
@@ -120,10 +191,10 @@
 
             label = "Raise";
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN     &kp POUND             &kp CARET              &none        &kp PLUS      &kp N7        &kp N8    &kp N9  &kp STAR  &kp BSPC
-&trans  &kp PERCENT      &kp AMPERSAND   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none        &kp KP_MINUS  &kp N4        &kp N5    &kp N6  &kp FSLH  &kp EQUAL
-&trans  &kp DOLLAR       &kp UNDERSCORE  &kp LBKT              &kp RBKT               &none        &kp NUMBER_0  &kp NUMBER_1  &kp N2    &kp N3  &kp DOT   &kp RET
-                                         &kp LGUI              &trans                 &kp SPACE    &kp RET       &trans        &kp RALT
+&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND      &kp DOLLAR    &copyright     &kp PLUS      &kp N7        &kp N8  &kp N9  &kp STAR  &trans
+&trans  &kp PERCENT      &kp CARET    &kp AMPERSAND  &kp ASTERISK  &registered    &kp KP_MINUS  &kp N4        &kp N5  &kp N6  &kp FSLH  &kp EQUAL
+&trans  &kp UNDER        &degree      &kp LBKT       &kp RBKT      &trademark     &kp NUMBER_0  &kp NUMBER_1  &kp N2  &kp N3  &kp DOT   &trans
+                                      &trans         &trans        &trans         &trans        &trans        &trans
             >;
         };
 
