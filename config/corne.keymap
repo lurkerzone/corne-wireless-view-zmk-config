@@ -111,6 +111,13 @@
 
             label = "TRADEMARK";
         };
+
+        email: email {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp K &kp I &kp E &kp N &kp H &kp U &kp O &kp DOT &kp C &kp H &kp I &kp N &kp G &kp AT &kp L &kp A &kp C &kp W &kp O &kp R &kp L &kp D &kp W &kp I &kp D &kp E &kp DOT &kp C &kp O &kp M &kp DOT &kp M &kp Y>;
+            label = "EMAIL";
+        };
     };
 
     combos {
@@ -145,6 +152,11 @@
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <16 17>;
         };
+
+        email {
+            bindings = <&email>;
+            key-positions = <27 28 29>;
+        };
     };
 
     keymap {
@@ -166,7 +178,7 @@
             >;
         };
 
-        lower_layer {
+        nav_num {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
@@ -182,7 +194,7 @@
             >;
         };
 
-        raise_layer {
+        sym_num {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
             // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
@@ -191,10 +203,10 @@
 
             label = "Raise";
             bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND      &kp DOLLAR    &copyright     &kp PLUS      &kp N7        &kp N8  &kp N9  &kp STAR  &trans
-&trans  &kp PERCENT      &kp CARET    &kp AMPERSAND  &kp ASTERISK  &registered    &kp KP_MINUS  &kp N4        &kp N5  &kp N6  &kp FSLH  &kp EQUAL
-&trans  &kp UNDER        &degree      &kp LBKT       &kp RBKT      &trademark     &kp NUMBER_0  &kp NUMBER_1  &kp N2  &kp N3  &kp DOT   &trans
-                                      &trans         &trans        &trans         &trans        &trans        &trans
+&trans    &kp EXCLAMATION  &kp AT_SIGN  &kp POUND      &kp DOLLAR    &copyright     &kp PLUS      &kp N7        &kp N8  &kp N9  &kp STAR  &trans
+&trans    &kp PERCENT      &kp CARET    &kp AMPERSAND  &kp ASTERISK  &registered    &kp KP_MINUS  &kp N4        &kp N5  &kp N6  &kp FSLH  &kp EQUAL
+&kp BSLH  &kp UNDER        &degree      &kp LBKT       &kp RBKT      &trademark     &kp NUMBER_0  &kp NUMBER_1  &kp N2  &kp N3  &kp DOT   &trans
+                                        &trans         &trans        &trans         &trans        &trans        &trans
             >;
         };
 
