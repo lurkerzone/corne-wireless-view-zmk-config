@@ -138,7 +138,7 @@
 
         Enter {
             bindings = <&kp ENTER>;
-            key-positions = <25 38>;
+            key-positions = <29 28>;
         };
 
         Escape {
